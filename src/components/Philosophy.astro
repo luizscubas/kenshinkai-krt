@@ -1,0 +1,45 @@
+---
+const dojoKun = [
+  "Esforçar-se para a formação do caráter.",
+  "Fidelidade para com o verdadeiro caminho da razão.",
+  "Criar o espírito de esforço e perseverança.",
+  "Respeito acima de tudo.",
+  "Conter o espírito de agressão."
+];
+---
+
+<section id="sobre" class="py-20 bg-tatame border-b border-white/10">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-16">
+      <p class="text-crimson text-sm font-semibold tracking-widest uppercase mb-2">Tradição & Linhagem</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Os Valores da Kenshinkai</h2>
+      <p class="text-neutral-400 max-w-2xl mx-auto">
+        No dojo Kenshinkai, a prática marcial é fundamentada nos ensinamentos clássicos japoneses, onde o desenvolvimento moral e o respeito mútuo precedem qualquer técnica de combate.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div class="bg-surface-dark p-8 rounded border border-white/10">
+        <h3 class="text-2xl font-bold text-white mb-6">Dojo Kun (Lema do Dojô)</h3>
+        <ol class="space-y-4">
+          {dojoKun.map((item, index) => (
+            <li class="flex items-start text-neutral-200">
+              <span class="text-crimson font-bold mr-3">{index + 1}.</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <div class="space-y-6 text-neutral-300 leading-relaxed">
+        <h3 class="text-2xl font-bold text-white">Formação que Ultrapassa o Tatame</h3>
+        <p>
+          A Associação Kenshinkai acredita que o Karatê é uma ferramenta de transformação contínua. Ensinamos a canalizar energia com foco, a vencer o medo com serenidade e a tratar colegas e mestres com reverência.
+        </p>
+        <p>
+          Nossos treinos equilibram o rigor técnico de kihon (fundamentos), kata (formas) e kumite (luta), adaptados com precisão pedagógica para cada faixa etária.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

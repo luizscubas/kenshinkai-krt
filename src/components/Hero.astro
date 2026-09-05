@@ -1,0 +1,40 @@
+---
+import { siteConfig } from '../data/siteConfig';
+import { buildWhatsAppUrl } from '../utils/whatsapp';
+
+const heroCtaUrl = buildWhatsAppUrl(
+  siteConfig.contact.whatsappNumber,
+  siteConfig.contact.defaultMessage
+);
+---
+
+<section class="relative bg-gradient-to-b from-surface-dark to-tatame py-24 md:py-36 border-b border-white/10">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+    <p class="text-crimson font-semibold tracking-widest text-sm md:text-base uppercase mb-4">
+      Arte Marcial Tradicional Japonesa
+    </p>
+    <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-6 leading-tight">
+      {siteConfig.name}
+    </h1>
+    <p class="text-lg sm:text-xl text-neutral-300 max-w-3xl mx-auto mb-10 leading-relaxed font-body">
+      Mais do que técnicas de autodefesa: desenvolvemos caráter, disciplina, respeito e superação para todas as fases da vida.
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a
+        href={heroCtaUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-full sm:w-auto bg-crimson hover:bg-crimson-dark text-white font-semibold text-lg px-8 py-4 rounded shadow-xl hover:shadow-crimson/30 transition-all duration-300"
+      >
+        Agendar Aula Experimental Gratuita
+      </a>
+      <a
+        href="#turmas"
+        class="w-full sm:w-auto bg-surface-card hover:bg-surface-dark border border-white/20 text-white font-medium text-lg px-8 py-4 rounded transition-all duration-300"
+      >
+        Ver Turmas & Horários
+      </a>
+    </div>
+  </div>
+</section>
