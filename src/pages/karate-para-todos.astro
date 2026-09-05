@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/siteConfig';
+import { buildWhatsAppUrl } from '../utils/whatsapp';
+
+const whatsappApoioUrl = buildWhatsAppUrl(
+  siteConfig.contact.whatsappNumber,
+  siteConfig.socialProject.whatsappMessage
+);
+---
+
+<BaseLayout
+  title={`Projeto ${siteConfig.socialProject.name} | ${siteConfig.name}`}
+  description={siteConfig.socialProject.description}
+>
+  <section class="py-20 bg-gradient-to-b from-surface-dark to-tatame border-b border-white/10">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <p class="text-crimson font-semibold tracking-widest uppercase text-sm mb-3">Inclusão & Cidadania</p>
+      <h1 class="text-4xl sm:text-6xl font-bold text-white mb-6">
+        {siteConfig.socialProject.name}
+      </h1>
+      <p class="text-xl text-neutral-300 leading-relaxed font-body">
+        {siteConfig.socialProject.headline}
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-tatame border-b border-white/10">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-12">
+      <div>
+        <h2 class="text-3xl font-bold text-white mb-4">Nossa Missão</h2>
+        <p class="text-neutral-300 leading-relaxed text-lg mb-4">
+          O projeto Karatê para Todos nasceu da convicção de que os valores das artes marciais não devem ser privilégio de poucos. Através desta iniciativa social mantida pela Associação Kenshinkai, abrimos as portas do dojô para crianças e jovens da rede pública e famílias de baixa renda.
+        </p>
+        <p class="text-neutral-400 leading-relaxed">
+          Mais do que ensinar golpes, ensinamos resiliência, respeito aos mais velhos, foco nos estudos e convivência pacífica em sociedade.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-surface-dark p-8 rounded border border-white/10">
+          <h3 class="text-2xl font-bold text-white mb-3">O Que Oferecemos</h3>
+          <ul class="space-y-3 text-neutral-300">
+            <li class="flex items-start">
+              <span class="text-crimson mr-2 font-bold">•</span>
+              Aulas gratuitas com os mesmos mestres e metodologia das turmas regulares.
+            </li>
+            <li class="flex items-start">
+              <span class="text-crimson mr-2 font-bold">•</span>
+              Fornecimento e reposição de kimonos e faixas conforme graduação.
+            </li>
+            <li class="flex items-start">
+              <span class="text-crimson mr-2 font-bold">•</span>
+              Acompanhamento do rendimento escolar e disciplina familiar.
+            </li>
+            <li class="flex items-start">
+              <span class="text-crimson mr-2 font-bold">•</span>
+              Inscrições custeadas para torneios oficiais e exames de faixa.
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-surface-dark p-8 rounded border border-crimson/30">
+          <h3 class="text-2xl font-bold text-white mb-3">Como Você Pode Apoiar</h3>
+          <p class="text-neutral-300 mb-6 leading-relaxed">
+            Sua contribuição direta mantém um jovem no tatame e longe da vulnerabilidade social:
+          </p>
+
+          <div class="bg-tatame p-4 rounded border border-white/10 mb-6">
+            <p class="text-xs text-neutral-400 uppercase tracking-wider mb-1">Chave PIX Direta:</p>
+            <p class="text-lg font-mono text-white font-bold select-all">{siteConfig.socialProject.pixKey}</p>
+            <p class="text-xs text-neutral-500 mt-1">{siteConfig.socialProject.pixType}</p>
+          </div>
+
+          <a
+            href={whatsappApoioUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block text-center w-full bg-crimson hover:bg-crimson-dark text-white font-semibold py-3.5 px-6 rounded transition-colors"
+          >
+            Falar com a Coordenação do Projeto
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
