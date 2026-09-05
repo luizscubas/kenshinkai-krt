@@ -42,6 +42,18 @@ const footerWhatsApp = buildWhatsAppUrl(
         >
           WhatsApp: {siteConfig.contact.whatsappDisplay}
         </a>
+        {siteConfig.contact.instagram && (
+          <div>
+            <a
+              href={siteConfig.contact.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center text-neutral-300 hover:text-white transition-colors text-sm"
+            >
+              Instagram: {siteConfig.contact.instagram}
+            </a>
+          </div>
+        )}
       </div>
     </div>
   </div>

@@ -46,6 +46,7 @@ const navWhatsApp = buildWhatsAppUrl(
       id="mobile-menu-toggle"
       aria-label="Abrir Menu de Navegação"
       aria-expanded="false"
+      aria-controls="mobile-menu"
       class="md:hidden p-2 text-neutral-300 hover:text-white focus:outline-none"
     >
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -97,5 +98,14 @@ const navWhatsApp = buildWhatsAppUrl(
       iconClose?.classList.add('hidden');
       toggleBtn?.setAttribute('aria-expanded', 'false');
     });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !menu?.classList.contains('hidden')) {
+      menu?.classList.add('hidden');
+      iconBars?.classList.remove('hidden');
+      iconClose?.classList.add('hidden');
+      toggleBtn?.setAttribute('aria-expanded', 'false');
+    }
   });
 </script>
