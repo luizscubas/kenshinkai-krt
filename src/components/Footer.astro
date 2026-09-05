@@ -1,0 +1,52 @@
+---
+import { siteConfig } from '../data/siteConfig';
+import { buildWhatsAppUrl } from '../utils/whatsapp';
+
+const footerWhatsApp = buildWhatsAppUrl(
+  siteConfig.contact.whatsappNumber,
+  siteConfig.contact.defaultMessage
+);
+---
+
+<footer class="bg-surface-dark border-t border-white/10 text-neutral-400 text-sm py-12">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+    <div>
+      <p class="text-xl font-bold text-white mb-2 font-title">{siteConfig.name}</p>
+      <p class="text-neutral-400 mb-4">{siteConfig.tagline}</p>
+      <p class="text-xs text-neutral-500">
+        Promovendo disciplina, cidadania e excelência marcial através do Karatê tradicional.
+      </p>
+    </div>
+
+    <div>
+      <p class="text-base font-semibold text-white mb-3">Links Rápidos</p>
+      <ul class="space-y-2">
+        <li><a href="/#sobre" class="hover:text-white transition-colors">Sobre a Kenshinkai</a></li>
+        <li><a href="/#turmas" class="hover:text-white transition-colors">Turmas e Horários</a></li>
+        <li><a href="/karate-para-todos" class="hover:text-crimson transition-colors">Projeto Karatê para Todos</a></li>
+        <li><a href="/conquistas" class="hover:text-gold transition-colors">Mural de Conquistas</a></li>
+        <li><a href="/#localizacao" class="hover:text-white transition-colors">Endereço e Mapa</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="text-base font-semibold text-white mb-3">Contato & Atendimento</p>
+      <p class="text-neutral-300 mb-1">{siteConfig.contact.address}</p>
+      <p class="text-neutral-400 mb-4">{siteConfig.contact.cityState}</p>
+      <div class="space-y-2">
+        <a
+          href={footerWhatsApp}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center text-whatsapp hover:text-emerald-400 font-medium"
+        >
+          WhatsApp: {siteConfig.contact.whatsappDisplay}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-6 border-t border-white/5 text-center text-xs text-neutral-500">
+    <p>&copy; {new Date().getFullYear()} {siteConfig.name}. Todos os direitos reservados.</p>
+  </div>
+</footer>

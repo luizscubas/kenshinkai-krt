@@ -1,0 +1,23 @@
+---
+import { siteConfig } from '../data/siteConfig';
+import { buildWhatsAppUrl } from '../utils/whatsapp';
+
+const whatsappUrl = buildWhatsAppUrl(
+  siteConfig.contact.whatsappNumber,
+  siteConfig.contact.defaultMessage
+);
+---
+
+<aside aria-label="Contato direto" class="fixed bottom-6 right-6 z-50">
+  <a
+    href={whatsappUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar no WhatsApp com o Dojo Kenshinkai"
+    class="flex items-center justify-center w-14 h-14 bg-whatsapp hover:bg-emerald-600 text-white rounded-full shadow-2xl transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none focus:ring-4 focus:ring-whatsapp/40"
+  >
+    <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M17.472 14.382c-.301-.15-1.782-.88-2.058-.98-.276-.1-.477-.15-.678.15-.201.3-.777.98-.953 1.18-.176.2-.352.226-.653.075s-1.27-.468-2.42-1.494c-.895-.798-1.5-1.784-1.676-2.085s-.019-.463.132-.613c.136-.135.301-.351.452-.527.151-.176.201-.301.301-.502.1-.201.05-.377-.025-.527s-.678-1.635-.93-2.238c-.244-.588-.493-.508-.678-.517-.176-.008-.377-.01-.578-.01s-.527.075-.803.376c-.276.301-1.054 1.03-1.054 2.512s1.079 2.913 1.23 3.114c.151.2 2.124 3.243 5.145 4.548.718.311 1.279.497 1.716.636.723.23 1.38.198 1.9-.12.58-.354 1.782-1.229 2.033-1.756.251-.527.251-.98.176-1.08-.075-.101-.276-.176-.577-.326zM12.04 2C6.51 2 2.02 6.49 2.02 12.02c0 1.84.5 3.56 1.38 5.05L2 22l5.08-1.33c1.44.8 3.08 1.25 4.96 1.25 5.53 0 10.02-4.49 10.02-10.02C22.06 6.49 17.57 2 12.04 2zm0 18.25c-1.61 0-3.1-.44-4.39-1.2l-.31-.19-3.26.85.87-3.18-.21-.33a8.17 8.17 0 01-1.27-4.38c0-4.55 3.7-8.25 8.25-8.25 4.55 0 8.25 3.7 8.25 8.25 0 4.55-3.7 8.23-8.25 8.23z"/>
+    </svg>
+  </a>
+</aside>
