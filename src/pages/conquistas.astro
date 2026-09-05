@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../data/siteConfig';
+---
+
+<BaseLayout
+  title={`Mural de Conquistas | ${siteConfig.name}`}
+  description="Histórico de medalhas, torneios e atletas premiados da Associação Karatê Kenshinkai."
+>
+  <section class="py-20 bg-gradient-to-b from-surface-dark to-tatame border-b border-white/10">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <p class="text-gold font-semibold tracking-widest uppercase text-sm mb-3">Honra & Esforço</p>
+      <h1 class="text-4xl sm:text-6xl font-bold text-white mb-6">
+        Mural de Conquistas
+      </h1>
+      <p class="text-xl text-neutral-300 leading-relaxed font-body">
+        O fruto de cada gota de suor no tatame: conheça a trajetória competitiva dos nossos atletas.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-tatame">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {siteConfig.achievements.map((item) => (
+          <article class="bg-surface-dark p-6 rounded border border-white/10 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-gold font-bold text-lg">Medalha de {item.medal}</span>
+                <span class="text-xs text-neutral-400 font-mono">{item.year}</span>
+              </div>
+              <h2 class="text-xl font-bold text-white mb-2">{item.tournament}</h2>
+              <p class="text-sm text-neutral-300 mb-1"><strong class="text-neutral-200">Categoria:</strong> {item.category}</p>
+              <p class="text-sm text-neutral-400"><strong class="text-neutral-200">Atleta:</strong> {item.athlete}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
