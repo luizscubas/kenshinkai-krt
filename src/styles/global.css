@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Zenzai Itacha';
+  src: local('Zenzai Itacha'), local('ZenzaiItacha'),
+       url('/fonts/zenzai-itacha.woff2') format('woff2'),
+       url('/fonts/zenzai-itacha.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Panoragraf';
+  src: local('Panoragraf'),
+       url('/fonts/panoragraf.woff2') format('woff2'),
+       url('/fonts/panoragraf.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #0B0C0E;
+  color: #F9FAFB;
+  font-family: 'Panoragraf', system-ui, -apple-system, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Zenzai Itacha', serif;
+  letter-spacing: 0.05em;
+}
+
+/* Regra estrita: Zero badges / spans decorativos */
+::selection {
+  background-color: #DC2626;
+  color: #FFFFFF;
+}
