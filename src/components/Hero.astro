@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import { siteConfig } from '../data/siteConfig';
 import { buildWhatsAppUrl } from '../utils/whatsapp';
 import { toTitleDisplay } from '../utils/text';
+import heroImg from '../assets/images/hero.png';
 
 const heroCtaUrl = buildWhatsAppUrl(
   siteConfig.contact.whatsappNumber,
@@ -9,33 +11,52 @@ const heroCtaUrl = buildWhatsAppUrl(
 );
 ---
 
-<section class="relative bg-gradient-to-b from-surface-dark to-tatame py-24 md:py-36 border-b border-white/10">
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
-    <p class="text-crimson font-semibold tracking-widest text-sm md:text-base uppercase mb-4">
-      Arte Marcial Tradicional Japonesa
-    </p>
-    <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-6 leading-tight">
-      {toTitleDisplay(siteConfig.name)}
-    </h1>
-    <p class="text-lg sm:text-xl text-neutral-300 max-w-3xl mx-auto mb-10 leading-relaxed font-body">
-      Mais do que técnicas de autodefesa: desenvolvemos caráter, disciplina, respeito e superação para todas as fases da vida.
-    </p>
+<section class="relative bg-gradient-to-b from-surface-dark to-tatame py-16 sm:py-24 md:py-28 border-b border-white/10 overflow-hidden">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+      <div class="lg:col-span-7 text-left">
+        <p class="text-crimson font-semibold tracking-widest text-sm md:text-base uppercase mb-3">
+          Arte Marcial Tradicional Japonesa
+        </p>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          {toTitleDisplay(siteConfig.name)}
+        </h1>
+        <p class="text-lg sm:text-xl text-neutral-300 mb-8 leading-relaxed font-body max-w-2xl">
+          Mais do que técnicas de autodefesa: desenvolvemos caráter, disciplina, respeito e superação para todas as fases da vida.
+        </p>
 
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a
-        href={heroCtaUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="w-full sm:w-auto bg-crimson hover:bg-crimson-dark text-white font-semibold text-lg px-8 py-4 rounded shadow-xl hover:shadow-crimson/30 transition-all duration-300"
-      >
-        Agendar Aula Experimental Gratuita
-      </a>
-      <a
-        href="#turmas"
-        class="w-full sm:w-auto bg-surface-card hover:bg-surface-dark border border-white/20 text-white font-medium text-lg px-8 py-4 rounded transition-all duration-300"
-      >
-        Ver Turmas & Horários
-      </a>
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+          <a
+            href={heroCtaUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex justify-center items-center text-center bg-crimson hover:bg-crimson-dark text-white font-semibold text-base sm:text-lg px-7 py-4 rounded shadow-xl hover:shadow-crimson/30 transition-all duration-300"
+          >
+            Agendar Aula Experimental Gratuita
+          </a>
+          <a
+            href="#turmas"
+            class="inline-flex justify-center items-center text-center bg-surface-card hover:bg-surface-dark border border-white/20 text-white font-medium text-base sm:text-lg px-7 py-4 rounded transition-all duration-300"
+          >
+            Ver Turmas & Horários
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 relative mx-auto w-full max-w-lg lg:max-w-none">
+        <!-- Glow carmesim suave de fundo -->
+        <div class="absolute -inset-3 bg-crimson/25 blur-2xl -z-10 pointer-events-none"></div>
+
+        <div class="relative overflow-hidden border border-white/15 bg-surface-card/60 shadow-2xl shadow-black/60">
+          <Image
+            src={heroImg}
+            alt="Dojô da Associação Karatê Kenshinkai"
+            class="w-full h-auto object-cover"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </section>
