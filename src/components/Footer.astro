@@ -1,6 +1,7 @@
 ---
 import { siteConfig } from '../data/siteConfig';
 import { buildWhatsAppUrl } from '../utils/whatsapp';
+import { toTitleDisplay } from '../utils/text';
 
 const footerWhatsApp = buildWhatsAppUrl(
   siteConfig.contact.whatsappNumber,
@@ -11,7 +12,16 @@ const footerWhatsApp = buildWhatsAppUrl(
 <footer class="bg-surface-dark border-t border-white/10 text-neutral-400 text-sm py-12">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
     <div>
-      <p class="text-xl font-bold text-white mb-2 font-title">{siteConfig.name}</p>
+      <div class="flex items-center gap-3 mb-3">
+        <img
+          src="/dojologo.svg"
+          alt="Logo da Associação Karatê Kenshinkai"
+          class="w-10 h-10 object-contain"
+          width="40"
+          height="40"
+        />
+        <p class="text-xl font-bold text-white font-title leading-tight">{toTitleDisplay(siteConfig.name)}</p>
+      </div>
       <p class="text-neutral-400 mb-4">{siteConfig.tagline}</p>
       <p class="text-xs text-neutral-500">
         Promovendo disciplina, cidadania e excelência marcial através do Karatê tradicional.

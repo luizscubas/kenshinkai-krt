@@ -7,7 +7,7 @@
   src: local('Zenzai Itacha'), local('ZenzaiItacha'),
        url('/fonts/zenzai-itacha.woff2') format('woff2'),
        url('/fonts/zenzai-itacha.ttf') format('truetype');
-  font-weight: normal;
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
@@ -33,9 +33,15 @@ html {
   font-family: 'Panoragraf', system-ui, -apple-system, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, .font-title {
   font-family: 'Zenzai Itacha', serif;
+  font-weight: normal;
   letter-spacing: 0.05em;
+}
+
+h4, h5, h6 {
+  font-family: 'Panoragraf', system-ui, -apple-system, sans-serif;
+  font-weight: 600;
 }
 
 /* Regra estrita: Zero badges / spans decorativos */
