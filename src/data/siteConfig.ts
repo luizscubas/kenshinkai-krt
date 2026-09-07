@@ -9,9 +9,13 @@ export interface DojoClass {
 }
 
 export interface Sensei {
+  id: 'dully' | 'serafim' | 'ricardo';
+  shortName: string;
   name: string;
   rank: string;
   role: string;
+  modality: string;
+  affiliation?: string;
   bio: string;
 }
 
@@ -31,13 +35,13 @@ export const siteConfig = {
   description: "Dojo tradicional de Karatê focado no desenvolvimento integral de crianças, jovens e adultos, e sede do projeto social Karatê para Todos.",
   
   contact: {
-    whatsappNumber: "5511999999999",
-    whatsappDisplay: "(11) 99999-9999",
-    instagram: "@karate.kenshinkai",
-    instagramUrl: "https://instagram.com",
-    address: "Rua do Dojô Tradicional, 123 - Bairro Central",
-    cityState: "São Paulo - SP",
-    mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1!2d-46.6!3d-23.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMwJzAwLjAiUyA0NsKwMzYnMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1600000000000",
+    whatsappNumber: "5513997092963",
+    whatsappDisplay: "(13) 99709-2963",
+    instagram: "@kenshinkaikarate",
+    instagramUrl: "https://www.instagram.com/kenshinkaikarate/",
+    address: "CRAS Bloco B, R. Moisés de Oliveira, 1233 - Vila Nova, Registro - SP, 11900-000",
+    cityState: "Registro - SP",
+    mapsEmbedUrl: "https://www.google.com/maps/place/CRAS+Bloco+B/@-24.5174323,-47.8406739,17z/data=!3m1!4b1!4m6!3m5!1s0x94c5349f4a0278b3:0xdc9d21047d33b58f!8m2!3d-24.5174323!4d-47.838099!16s%2Fg%2F11c6qrjyrm?entry=ttu",
     defaultMessage: "Olá! Conheci o site da Kenshinkai e gostaria de agendar uma aula experimental gratuita de Karatê."
   },
 
@@ -66,17 +70,41 @@ export const siteConfig = {
     name: "Karatê para Todos",
     headline: "Transformando o futuro de jovens através da arte marcial",
     description: "Iniciativa voluntária da Associação Kenshinkai que oferece aulas gratuitas, kimonos e apoio educacional para crianças e adolescentes em situação de vulnerabilidade social.",
-    pixKey: "social@kenshinkai.org.br",
-    pixType: "E-mail Oficial da Associação",
+    pixKey: "68386849000189",
+    pixType: "Chave Pix do nosso projeto",
     whatsappMessage: "Olá! Gostaria de mais informações sobre como apoiar ou apadrinhar o projeto social Karatê para Todos."
   },
 
   senseis: [
     {
-      name: "Mestre Responsável",
-      rank: "Faixa Preta 5º Dan",
-      role: "Diretor Técnico e Fundador",
-      bio: "Mais de 30 anos dedicados ao estudo, preservação e ensino do Karatê tradicional, com histórico de formação de dezenas de faixas pretas e campeões dentro e fora do tatame."
+      id: "dully",
+      shortName: "Dully",
+      name: "Sensei Dully",
+      rank: "Faixa Preta",
+      role: "Instrutor Técnico",
+      modality: "Karatê Tradicional e Defesa Pessoal",
+      affiliation: "Kenshinkai Honbu Dojo",
+      bio: "Com sólida dedicação ao Karatê tradicional, atua na formação técnica e filosófica dos alunos, enfatizando disciplina, autocontrole e o aprimoramento contínuo dos fundamentos marciais."
+    },
+    {
+      id: "serafim",
+      shortName: "Serafim",
+      name: "Serafim R. de Oliveira Junior",
+      rank: "Faixa Preta",
+      role: "Sensei e Diretor Técnico",
+      modality: "Full Contact Karate Otokojyuku",
+      affiliation: "Kenshinkai Honbu Dojo",
+      bio: "Instrutor dedicado à preservação do Karatê de contato pleno e formação moral dos alunos. Atua no desenvolvimento técnico de atletas de competição e na condução das turmas do dojo com ênfase na disciplina, respeito e superação constante."
+    },
+    {
+      id: "ricardo",
+      shortName: "Ricardo",
+      name: "Sensei Ricardo",
+      rank: "Faixa Preta",
+      role: "Instrutor Técnico",
+      modality: "Karatê Tradicional e Condicionamento",
+      affiliation: "Kenshinkai Honbu Dojo",
+      bio: "Especialista em condicionamento físico marcial e fundamentos de combate, orienta os alunos na busca pelo equilíbrio entre preparo físico rigoroso, autocontrole e respeito às tradições da arte marcial."
     }
   ] satisfies Sensei[],
 

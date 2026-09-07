@@ -1,11 +1,5 @@
 ---
 import { siteConfig } from '../data/siteConfig';
-import { buildWhatsAppUrl } from '../utils/whatsapp';
-
-const navWhatsApp = buildWhatsAppUrl(
-  siteConfig.contact.whatsappNumber,
-  siteConfig.contact.defaultMessage
-);
 ---
 
 <header class="sticky top-0 z-40 bg-tatame/95 backdrop-blur-md border-b border-white/10">
@@ -38,18 +32,6 @@ const navWhatsApp = buildWhatsAppUrl(
       <a href="/#localizacao" class="hover:text-white transition-colors">Localização</a>
     </nav>
 
-    <!-- Botão de Ação Direta Topo -->
-    <div class="hidden md:flex items-center">
-      <a
-        href={navWhatsApp}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="bg-crimson hover:bg-crimson-dark text-white text-sm font-semibold px-5 py-2.5 rounded transition-all duration-200 shadow-md hover:shadow-crimson/20"
-      >
-        Aula Experimental
-      </a>
-    </div>
-
     <!-- Botão Hambúrguer Mobile -->
     <button
       id="mobile-menu-toggle"
@@ -73,16 +55,6 @@ const navWhatsApp = buildWhatsAppUrl(
     <a href="/karate-para-todos" class="block py-2 text-crimson font-medium">Projeto Social</a>
     <a href="/conquistas" class="block py-2 text-gold font-medium">Conquistas & Atletas</a>
     <a href="/#localizacao" class="block py-2 text-neutral-200 hover:text-white">Localização</a>
-    <div class="pt-2">
-      <a
-        href={navWhatsApp}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="block text-center w-full bg-crimson hover:bg-crimson-dark text-white font-medium py-3 rounded"
-      >
-        Agendar Aula Experimental
-      </a>
-    </div>
   </div>
 </header>
 
